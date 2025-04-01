@@ -10,7 +10,7 @@ const itemSchema = new mongoose.Schema(
 ); // Disable _id for items
 
 const dishSchema = new mongoose.Schema({
-  name: { type: String, required: true },
+  dishName: { type: String, required: true },
   items: [itemSchema], // Array of items without an _id field
 });
 

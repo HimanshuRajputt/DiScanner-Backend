@@ -12,10 +12,10 @@ dishRoutes.get("/", async (req, res) => {
 
 // Create a Dish
 dishRoutes.post("/add", authMiddleware, async (req, res) => {
-  const { name, items } = req.body;
+  const { dishName, items } = req.body;
 
   try {
-    const dish = await Dish.create({ name, items });
+    const dish = await Dish.create({ dishName, items });
     res.status(201).json(dish);
   } catch (error) {
     res.status(400).json({ error: "Failed to create dish" });
